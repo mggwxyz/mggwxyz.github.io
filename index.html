@@ -54,19 +54,31 @@
                 </span>
             </nav>
 
-            <section class="hero is-large is-light is-bold">
+            <section class="hero is-medium is-primary is-bold">
                 <div class="hero-body">
                     <div class="container">
-                        <h1 class="title is-1">
-                            Michael Gilbertson | mggwxyz
-                        </h1>
-                        <h2 class="subtitle is-3">
-                            Human Web Developer<br>
-                        </h2>
-                        <p><strong>This website is currently under construction...</strong></p>
-                        <p>Please click the octocat int the top-left corner to go to my GitHub profile</p>
+                        <div class="columns">
+                            <div class="column is-9">
+                                <h1 class="title is-1">
+                                    Michael Gilbertson<br>
+                                    @mggwxyz
+                                </h1>
+                                <h2 class="subtitle is-3">
+                                    Human Web Developer<br>
+                                </h2>
+                                <p><strong>This website is currently under construction...</strong></p>
+                                <p>Please click the octocat int the top-left corner to go to my GitHub profile</p>
+                            </div>
+                            <div class="column box is-circle has-text-center is-hidden-touch has-z-index-5">
+                                <figure class="image is-square">
+                                    <img  class="is-circle" src="./images/profile-pic.jpg">
+                                </figure>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+                <div class="stars"></div>
             </section>
 
             <section id="about" class="section">
@@ -97,6 +109,12 @@
                     <div v-for="project of projects" class="container">
                         <div class="card">
                             <header class="card-header">
+                                <div class="card-header-icon">
+                                    <span class="icon">
+                                        <i class="fa fa-code" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
                                 <p class="card-header-title">
                                     {{project.title}}
                                 </p>
@@ -116,7 +134,7 @@
                 </div>
             </section>
 
-            <section id="contact" class="hero is-large is-light is-bold">
+            <section id="contact" class="hero is-medium is-primary is-bold">
                 <div class="hero-body">
                     <div class="container">
                         <h2 class="title is-1">
