@@ -9,11 +9,11 @@
     <link href=".css/index.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="is-fullwidth">
+    <div id="app" class="is-fullwidth">
         <nav class="container nav">
             <div class="nav-left">
                 <span class="nav-item">
-                    <a href="#" title="Home">
+                    <a id="home" href="#home" title="Home">
                         <span class="icon">
                             <i class="fa fa-code" aria-hidden="true"></i>
                         </span>
@@ -31,14 +31,17 @@
             <!-- This "nav-menu" is hidden on mobile -->
             <!-- Add the modifier "is-active" to display it on mobile -->
             <div class="nav-right nav-menu">
-                <a class="nav-item" href="#">
-                    About
+                <a class="nav-item" href="#aboutme">
+                    About Me
                 </a>
-                <a class="nav-item" href="#">
+                <a class="nav-item" href="#experience">
                     Experience
                 </a>
-                <a class="nav-item" href="#">
-                  Projects
+                <a class="nav-item" href="#projects">
+                    Projects
+                </a>
+                <a class="nav-item" href="#contact">
+                    Contact
                 </a>
             </div>
 
@@ -54,15 +57,68 @@
         <section class="hero is-large is-light is-bold">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title">
+                    <h1 class="title is-1">
                         Michael Gilbertson
                     </h1>
-                    <h2 class="subtitle">
+                    <h2 class="subtitle is-3">
                         Human Web Developer
                     </h2>
                </div>
              </div>
         </section>
+
+        <section id="aboutme" class="section">
+            <div class="container ">
+                <h2 class="title">
+                    About Me
+                </h2>
+                <h3 class="subtitle">
+                    ...
+                </h3>
+           </div>
+        </section>
+
+        <hr>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h1 class="title">
+                    Experience
+                </h1>
+                <h2 class="subtitle">
+                    ...
+                </h2>
+           </div>
+        </section>
+
+        <hr>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h1 class="title">
+                    Projects
+                </h1>
+                <h2 class="subtitle">
+                    ...
+                </h2>
+           </div>
+        </section>
+
+        <section id="contact" class="hero is-large is-light is-bold">
+            <div class="hero-body">
+                <div class="container">
+                    <h2 class="title">
+                        Contact
+                    </h2>
+               </div>
+            </div>
+        </section>
+
+        <!-- Dependencies -->
+        <script src="node_modules/vue/dist/vue.js"></script>
+        <script src="node_modules/vue-router/dist/vue-router.js"></script>
+        <script src="./index.js"></script>
+
     </div>
 </body>
 </html>
