@@ -12,13 +12,13 @@
         <div id="app" class="is-fullwidth">
             <nav class="container nav">
                 <div class="nav-left">
-                    <span class="nav-item">
+                    <!-- <span class="nav-item">
                         <a id="home" href="#home" title="Home">
                             <span class="icon">
                                 <i class="fa fa-code" aria-hidden="true"></i>
                             </span>
                         </a>
-                    </span>
+                    </span> -->
                     <span class="nav-item">
                         <a href="http://www.github.com/mggwxyz" title="GitHub Profile">
                             <span class="icon">
@@ -47,7 +47,7 @@
 
                 <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
                 <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-                <span class="nav-toggle">
+                <span v-on-click="activeNavMenu = !activeNavMenu" class="nav-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -111,8 +111,8 @@
                                 </div>
                             </div>
                             <footer class="card-footer">
-                                <a href="" class="card-footer-item">Try It Out</a>
-                                <a href="" class="card-footer-item">Source Code</a>
+                                <a v-bind:href="project.demo" class="card-footer-item">Demo</a>
+                                <a v-bind:href="project.src" class="card-footer-item">Source Code</a>
                             </footer>
                         </div>
                         <br>
@@ -131,8 +131,7 @@
             </section>
 
             <!-- Dependencies -->
-            <script src="node_modules/vue/dist/vue.min.js"></script>
-            <!-- <script src="node_modules/vue-router/dist/vue-router.js"></script> -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
             <script src="./index.js"></script>
 
         </div>
