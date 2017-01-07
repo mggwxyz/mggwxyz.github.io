@@ -12,13 +12,6 @@
         <div id="app" class="is-fullwidth">
             <nav class="container nav">
                 <div class="nav-left">
-                    <!-- <span class="nav-item">
-                        <a id="home" href="#home" title="Home">
-                            <span class="icon">
-                                <i class="fa fa-code" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </span> -->
                     <span class="nav-item">
                         <a href="http://www.github.com/mggwxyz" title="GitHub Profile">
                             <span class="icon">
@@ -26,13 +19,20 @@
                             </span>
                         </a>
                     </span>
+                    <span class="nav-item">
+                        <a href="http://www.linkedin.com/in/mggwxyz" title="LinkedIn Profile">
+                            <span class="icon">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </span>
                 </div>
 
                 <!-- This "nav-menu" is hidden on mobile -->
                 <!-- Add the modifier "is-active" to display it on mobile -->
-                <div class="nav-right nav-menu">
+                <div class="nav-right nav-menu" v-bind:class="{ 'is-active': activeNavMenu }">
                     <a class="nav-item" href="#aboutme">
-                        About Me
+                        About
                     </a>
                     <a class="nav-item" href="#experience">
                         Experience
@@ -47,7 +47,7 @@
 
                 <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
                 <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-                <span v-on-click="activeNavMenu = !activeNavMenu" class="nav-toggle">
+                <span v-on:click="activeNavMenu = !activeNavMenu" class="nav-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -131,8 +131,7 @@
             </section>
 
             <!-- Dependencies -->
-            <script src="https://unpkg.com/vue/dist/vue.js"></script>
-            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script> -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
             <script src="./index.js"></script>
 
         </div>
