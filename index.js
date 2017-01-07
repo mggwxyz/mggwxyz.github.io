@@ -1,34 +1,32 @@
-var router = new VueRouter({
-    routes: [{
-        path: '/modal',
-        component: Modal
-    }, {
-        path: '/login',
-        component: Login
-    }, {
-        path: '/radio',
-        component: Radio
-    }, {
-        path: '/list',
-        component: List
-    }, {
-        path: '/text',
-        component: Text
-    }, {
-        path: '/breakpoint',
-        component: Breakpoint
-    }, {
-        path: '/grid',
-        component: Grid
-    }]
-});
+// var router = new VueRouter({
+//     routes: [{
+//         path: '/home'
+//     }]
+// });
 
 var app = new Vue({
     el: '#app',
     data: {
+        activeNavMenu: false,
         blah: 'blah blah blah',
         examples: [{
             title: 'column',
+        }],
+        projects: [{
+            title: "Pixelpad",
+            description: "A clock that will display the time written out in a sentence.",
+            demo: "http://mggwxyz.github.io/pixelpad",
+            src: "http://www.github.com/mggwxyz/pixelpad"
+        }, {
+            title: "Neighborhood Map",
+            description: "A map application to find anything you want nearby using Yelp's and Google Maps' APIs",
+            demo: "http://mggwxyz.github.io/neighborhood-map",
+            src: "http://www.github.com/mggwxyz/neighborhood-map"
+        }, {
+            title: "Verbal Clock",
+            description: "A clock that will display the time written out in a sentence.",
+            demo: "http://mggwxyz.github.io/verbal-clock",
+            src: "http://www.github.com/mggwxyz/verbal-clock"
         }],
         resume: {
             "basics": {
@@ -123,6 +121,6 @@ var app = new Vue({
                 "reference": "Reference..."
             }]
         }
-    },
-    router: router
+    }
+    // router: router
 }).$mount('#app');

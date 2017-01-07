@@ -1,124 +1,140 @@
 <!doctype html>
 <html lang="en-us">
-<head>
-    <title>Michael Gilbertson (mggwxyz)</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./images/favicon.png" type="image/x-icon">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.0/css/bulma.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-    <link href=".css/index.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <div id="app" class="is-fullwidth">
-        <nav class="container nav">
-            <div class="nav-left">
-                <span class="nav-item">
-                    <a id="home" href="#home" title="Home">
-                        <span class="icon">
-                            <i class="fa fa-code" aria-hidden="true"></i>
-                        </span>
+    <head>
+        <title>Michael Gilbertson (mggwxyz)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="./images/favicon.png" type="image/x-icon">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.0/css/bulma.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link href="./index.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="app" class="is-fullwidth">
+            <nav class="container nav">
+                <div class="nav-left">
+                    <span class="nav-item">
+                        <a id="home" href="#home" title="Home">
+                            <span class="icon">
+                                <i class="fa fa-code" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </span>
+                    <span class="nav-item">
+                        <a href="http://www.github.com/mggwxyz" title="GitHub Profile">
+                            <span class="icon">
+                                <i class="fa fa-github" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </span>
+                </div>
+
+                <!-- This "nav-menu" is hidden on mobile -->
+                <!-- Add the modifier "is-active" to display it on mobile -->
+                <div class="nav-right nav-menu">
+                    <a class="nav-item" href="#aboutme">
+                        About Me
                     </a>
-                </span>
-                <span class="nav-item">
-                    <a href="http://www.github.com/mggwxyz" title="GitHub Profile">
-                        <span class="icon">
-                            <i class="fa fa-github" aria-hidden="true"></i>
-                        </span>
+                    <a class="nav-item" href="#experience">
+                        Experience
                     </a>
-                </span>
-            </div>
-
-            <!-- This "nav-menu" is hidden on mobile -->
-            <!-- Add the modifier "is-active" to display it on mobile -->
-            <div class="nav-right nav-menu">
-                <a class="nav-item" href="#aboutme">
-                    About Me
-                </a>
-                <a class="nav-item" href="#experience">
-                    Experience
-                </a>
-                <a class="nav-item" href="#projects">
-                    Projects
-                </a>
-                <a class="nav-item" href="#contact">
-                    Contact
-                </a>
-            </div>
-
-            <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-            <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-            <span class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
-        </nav>
-
-        <section class="hero is-large is-light is-bold">
-            <div class="hero-body">
-                <div class="container">
-                    <h1 class="title is-1">
-                        Michael Gilbertson
-                    </h1>
-                    <h2 class="subtitle is-3">
-                        Human Web Developer
-                    </h2>
-               </div>
-             </div>
-        </section>
-
-        <section id="aboutme" class="section">
-            <div class="container ">
-                <h2 class="title">
-                    About Me
-                </h2>
-                <h3 class="subtitle">
-                    ...
-                </h3>
-           </div>
-        </section>
-
-        <hr>
-
-        <section id="experience" class="section">
-            <div class="container">
-                <h1 class="title">
-                    Experience
-                </h1>
-                <h2 class="subtitle">
-                    ...
-                </h2>
-           </div>
-        </section>
-
-        <hr>
-
-        <section id="projects" class="section">
-            <div class="container">
-                <h1 class="title">
-                    Projects
-                </h1>
-                <h2 class="subtitle">
-                    ...
-                </h2>
-           </div>
-        </section>
-
-        <section id="contact" class="hero is-large is-light is-bold">
-            <div class="hero-body">
-                <div class="container">
-                    <h2 class="title">
+                    <a class="nav-item" href="#projects">
+                        Projects
+                    </a>
+                    <a class="nav-item" href="#contact">
                         Contact
+                    </a>
+                </div>
+
+                <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+                <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+                <span class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </nav>
+
+            <section class="hero is-large is-light is-bold">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title is-1">
+                            Michael Gilbertson
+                        </h1>
+                        <h2 class="subtitle is-3">
+                            Human Web Developer
+                        </h2>
+                    </div>
+                </div>
+            </section>
+
+            <section id="aboutme" class="section">
+                <div class="container ">
+                    <h2 class="title">
+                        About Me
                     </h2>
-               </div>
-            </div>
-        </section>
+                    <h3 class="subtitle">
+                        ...
+                    </h3>
+                </div>
+            </section>
 
-        <!-- Dependencies -->
-        <script src="node_modules/vue/dist/vue.js"></script>
-        <script src="node_modules/vue-router/dist/vue-router.js"></script>
-        <script src="./index.js"></script>
+            <hr>
 
-    </div>
-</body>
+            <section id="experience" class="section">
+                <div class="container">
+                    <h1 class="title">
+                        Experience
+                    </h1>
+                    <h2 class="subtitle">
+                        ...
+                    </h2>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="projects" class="section">
+                <div class="container">
+                    <h1 class="title">
+                        Projects
+                    </h1>
+                    <div v-for="project of projects" class="container">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    {{project.title}}
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    {{project.description}}
+                                </div>
+                            </div>
+                            <footer class="card-footer">
+                                <a href="" class="card-footer-item">Try It Out</a>
+                                <a href="" class="card-footer-item">Source Code</a>
+                            </footer>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="hero is-large is-light is-bold">
+                <div class="hero-body">
+                    <div class="container">
+                        <h2 class="title">
+                            Contact
+                        </h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dependencies -->
+            <script src="node_modules/vue/dist/vue.min.js"></script>
+            <!-- <script src="node_modules/vue-router/dist/vue-router.js"></script> -->
+            <script src="./index.js"></script>
+
+        </div>
+    </body>
 </html>
