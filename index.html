@@ -83,9 +83,12 @@
 
             <section id="about" class="section">
                 <div class="container ">
-                    <h2 class="title">
+                    <h2 class="title is-2">
                         About Me
                     </h2>
+                    <div class="content">
+                        <p v-for="paragraph in about_me.paragraphs">{{paragraph}}</p>
+                    </div>
                 </div>
             </section>
 
@@ -93,22 +96,68 @@
 
             <section id="experience" class="section">
                 <div class="container">
-                    <h2 class="title">
+                    <h2 class="title is-2">
                         Experience
                     </h2>
+                    <div class="container">
+                        <h3 class="title">Jobs</h3>
+                        <template v-for="fulltime_job in experience.fulltime_jobs">
+                            <div class="columns is-mobile">
+                                <div class="column is-one-quarter-mobile is-1-desktop">
+                                    <figure class="image is-square">
+                                      <img v-bind:src="fulltime_job.company_logo_url">
+                                    </figure>
+                                </div>
+                                <div class="column">
+                                    <div class="content">
+                                        <p class="title is-3">{{fulltime_job.position}}</p>
+                                        <p class="subtitle is-5">{{fulltime_job.company}}</p>
+                                        <p>{{fulltime_job.description}}
+                                            <br>
+                                            <em>{{fulltime_job.date_range}}</em>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <hr>
+                    <div class="container">
+                        <h3 class="title">Internships</h3>
+                        <template v-for="internship in experience.internships">
+                            <div class="columns is-mobile">
+                                <div class="column is-one-quarter-mobile is-1-desktop">
+                                    <figure class="image is-square">
+                                      <img v-bind:src="internship.company_logo_url">
+                                    </figure>
+                                </div>
+                                <div class="column">
+                                    <div class="content">
+                                        <p class="title is-3">{{internship.position}}</p>
+                                        <p class="subtitle is-5">{{internship.company}}</p>
+                                        <p>{{internship.description}}
+                                            <br>
+                                            <em>{{internship.date_range}}</em>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <hr>
                     <div class="container">
                         <h3 class="title">Education</h3>
                         <div class="columns is-mobile">
                             <div class="column is-one-quarter-mobile is-1-desktop">
                                 <figure class="image is-square">
-                                  <img v-bind:src="education.school_logo">
+                                  <img v-bind:src="experience.education.school_logo">
                                 </figure>
                             </div>
                             <div class="column">
                                 <div class="content">
-                                    <p class="title is-3">{{education.major}}</p>
-                                    <p class="subtitle is-5">{{education.minor}}</p>
-                                    <p>{{education.school}} <em>{{education.date_range}}</em></p>
+                                    <p class="title is-3">{{experience.education.major}}</p>
+                                    <p class="subtitle is-5">{{experience.education.minor}}</p>
+                                    <p>{{experience.education.school}} <em>{{experience.education.date_range}}</em></p>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +169,7 @@
 
             <section id="projects" class="section">
                 <div class="container">
-                    <h1 class="title">
+                    <h1 class="title is-2">
                         Projects
                     </h1>
                     <div class="columns is-multiline">

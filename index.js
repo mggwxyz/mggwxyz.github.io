@@ -2,15 +2,47 @@ var app = new Vue({
     el: '#app',
     data: {
         activeNavMenu: false,
-        experience: [{
-
-        }],
-        education: {
-            school: "University of Virginia",
-            school_logo: "./images/uva-logo.jpg",
-            major: "B.S. in Computer Science",
-            minor: "Minor in Studio Art",
-            date_range: "Summer 2011 - Summer 2015"
+        about_me: {
+            paragraphs: [
+                "My name is Michael Gilbertson and I have just completed a B.S. in Computer Science with a minor in Studio Art.",
+                "Like most other people I’ve have met, I found it difficult to decide on what I should major in while attending school, but sincerely believe that I’ve chosen a major/minor combination in which I can explore my passions for both technology and design. My creative thinking, abundant curiosity, and easy-going attitude will make me a great fit in the workplace.  I am eager to learn all that my peers are able to offer me. ",
+                "This life is a short one, and I want to make the most of it."
+            ]
+        },
+        experience: {
+            fulltime_jobs: [{
+                position: "Full Stack Developer",
+                company: "Accenture Federal Services",
+                company_logo_url: "./images/accenture-logo.png",
+                description: "My responsibilities included was to help to develop a national scheduling system for naturalization applicants",
+                date_range: "September 2015 - present"
+            },{
+                position: "Software Developer",
+                company: "Agilex Technologies LLC",
+                company_logo_url: "./images/agilex-logo.png",
+                description: "My responsibilities included leading scrum meetings and developing apps using AngularJS",
+                date_range: "June 2015 - August 2015"
+            }],
+            internships: [{
+                position: "DSO - Audience Engagement Intern",
+                company: "AARP",
+                company_logo_url: "./images/aarp-logo.png",
+                description: "My responsibilities included managing published content within AARP's CMS, developing new strategies for community engagement, and brainstorming ideas about how to increase overall site traffic.",
+                date_range: "May 2014 - August 2014"
+            }, {
+                position: "DSO - Product Intern",
+                company: "AARP",
+                company_logo_url: "./images/aarp-logo.png",
+                description: "My responsibilities included analyzing and evaluating the accessbility of AARP's website with multiple screen readers and browsers in accordance with WCAG 2.0.",
+                date_range: "May 2013 - August 2013"
+            }],
+            education: {
+                school: "University of Virginia",
+                school_logo: "./images/uva-logo.jpg",
+                major: "B.S. in Computer Science",
+                minor: "Minor in Studio Art",
+                date_range: "August 2011 - May 2015"
+            }
         },
         projects: [{
             title: "Pixelpad",
@@ -41,8 +73,5 @@ var app = new Vue({
             src: "http://www.github.com/mggwxyz/google-homepage",
             technologies: ["HTML", "CSS"]
         }]
-    },
-    methods: {
-
     }
 }).$mount('#app');
