@@ -31,16 +31,16 @@
                 <!-- This "nav-menu" is hidden on mobile -->
                 <!-- Add the modifier "is-active" to display it on mobile -->
                 <div class="nav-right nav-menu" v-bind:class="{ 'is-active': activeNavMenu }">
-                    <a class="nav-item" href="#about">
+                    <a class="nav-item" v-on:click="activeNavMenu = false" href="#about">
                         About
                     </a>
-                    <a class="nav-item" href="#experience">
+                    <a class="nav-item" v-on:click="activeNavMenu = false" href="#experience">
                         Experience
                     </a>
-                    <a class="nav-item" href="#projects">
+                    <a class="nav-item" v-on:click="activeNavMenu = false" href="#projects">
                         Projects
                     </a>
-                    <a class="nav-item" href="#contact">
+                    <a class="nav-item" v-on:click="activeNavMenu = false" href="#contact">
                         Contact
                     </a>
                 </div>
@@ -54,7 +54,7 @@
                 </span>
             </nav>
 
-            <section class="hero is-medium is-primary is-bold">
+            <section class="hero is-medium is-info is-bold">
                 <div class="hero-body">
                     <div class="container">
                         <div class="columns">
@@ -69,9 +69,9 @@
                                 <p><strong>This website is currently under construction...</strong></p>
                                 <p>Please click the octocat int the top-left corner to go to my GitHub profile</p>
                             </div>
-                            <div class="column box is-circle has-text-center is-hidden-touch has-z-index-5">
+                            <div class="column box has-text-center is-hidden-touch has-z-index-5">
                                 <figure class="image is-square">
-                                    <img  class="is-circle" src="./images/profile-pic.jpg">
+                                    <img  src="./images/profile-pic.jpg">
                                 </figure>
                             </div>
                         </div>
@@ -93,9 +93,26 @@
 
             <section id="experience" class="section">
                 <div class="container">
-                    <h1 class="title">
+                    <h2 class="title">
                         Experience
-                    </h1>
+                    </h2>
+                    <div class="container">
+                        <h3 class="title">Education</h3>
+                        <div class="columns is-mobile">
+                            <div class="column is-one-quarter-mobile is-1-desktop">
+                                <figure class="image is-square">
+                                  <img v-bind:src="education.school_logo">
+                                </figure>
+                            </div>
+                            <div class="column">
+                                <div class="content">
+                                    <p class="title is-3">{{education.major}}</p>
+                                    <p class="subtitle is-5">{{education.minor}}</p>
+                                    <p>{{education.school}} <em>{{education.date_range}}</em></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -106,35 +123,46 @@
                     <h1 class="title">
                         Projects
                     </h1>
-                    <div v-for="project of projects" class="container">
-                        <div class="card">
-                            <header class="card-header">
-                                <div class="card-header-icon">
-                                    <span class="icon">
-                                        <i class="fa fa-code" aria-hidden="true"></i>
-                                    </span>
+                    <div class="columns is-multiline">
+                        <div v-for="project of projects" class="column is-half ">
+                            <div class="card">
+                                <header class="card-header">
+                                    <div class="card-header-icon">
+                                        <span class="icon">
+                                            <i class="fa fa-code" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <p class="card-header-title">
+                                        {{project.title}}
+                                    </p>
+                                </header>
+                                <div class="card-image">
+                                    <figure class="image is-16by9">
+                                        <img v-bind:src="project.preview_image_url" v-bind:alt="project.title">
+                                    </figure>
                                 </div>
-
-                                <p class="card-header-title">
-                                    {{project.title}}
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    {{project.description}}
+                                <div class="card-content">
+                                    <div class="content">
+                                        <p>{{project.description}}</p>
+                                        <template v-for="technology in project.technologies">
+                                            <span class="tag has-margin-right">
+                                                {{technology}}
+                                            </span>
+                                        </template>
+                                    </div>
                                 </div>
+                                <footer class="card-footer">
+                                    <a v-bind:href="project.demo" class="card-footer-item">Demo</a>
+                                    <a v-bind:href="project.src" class="card-footer-item">Source Code</a>
+                                </footer>
                             </div>
-                            <footer class="card-footer">
-                                <a v-bind:href="project.demo" class="card-footer-item">Demo</a>
-                                <a v-bind:href="project.src" class="card-footer-item">Source Code</a>
-                            </footer>
+                            <br>
                         </div>
-                        <br>
                     </div>
                 </div>
             </section>
 
-            <section id="contact" class="hero is-medium is-primary is-bold">
+            <section id="contact" class="hero is-medium is-info is-bold">
                 <div class="hero-body">
                     <div class="container">
                         <h2 class="title is-1">

@@ -31,3 +31,7 @@ html, body {
 .has-z-index-5 {
     z-index: 5;
 }
+
+.has-margin-right {
+    margin-right: 0.5rem;
+}
