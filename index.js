@@ -59,11 +59,11 @@ var app = new Vue({
             src: "http://www.github.com/mggwxyz/neighborhood-map",
             technologies: ["HTML", "CSS", "Javascript", "Knockout.js"]
         }, {
-            title: "Verbal Clock",
+            title: "Talking Clock",
             preview_image_url: "./images/verbal-clock-preview.png",
             description: "A clock that will display the time written out in a sentence and also read it out to you",
-            demo: "http://mggwxyz.github.io/verbal-clock",
-            src: "http://www.github.com/mggwxyz/verbal-clock",
+            demo: "http://mggwxyz.github.io/talking-clock",
+            src: "http://www.github.com/mggwxyz/talking-clock",
             technologies: ["HTML", "CSS", "Javascript"]
         }, {
             title: "Google Homepage",
