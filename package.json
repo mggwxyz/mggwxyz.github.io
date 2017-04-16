@@ -8,7 +8,7 @@
     "test": "mocha",
     "dev-server": "npm i  && gulp develop",
     "demo-server": "npm i && gulp build && cd dist && http-server -o -p 3000",
-    "deploy": "npm i && gulp build && cp README.md .travis.yml gulpfile.js package.json dist && gh-pages -d dist -o origin -b master"
+    "deploy": "npm i && gulp build && cp README.md .travis.yml gulpfile.js package.json dist && gh-pages -t -d dist -o origin -b master"
   },
   "repository": {
     "type": "git",
