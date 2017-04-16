@@ -12,13 +12,7 @@ var browserSync = require('browser-sync');
 var uglify = require('gulp-uglify');
 var pug = require('gulp-pug');
 
-gulp.task('compile-pug-to-html', function buildHTML() {
-    return gulp.src('src/views/**/*.pug')
-        .pipe(pug({
-            pretty: true
-        }))
-        .pipe(gulp.dest('src'))
-});
+
 
 gulp.task('watch', ['browserSync', 'compile-scss-to-css'],function(){
     gulp.watch('src/stylesheets/scss/*', ['compile-scss-to-css']);
@@ -35,6 +29,20 @@ gulp.task('browserSync', function(){
     })
 });
 
+gulp.task('compile-pug-to-html', function buildHTML() {
+    return gulp.src('src/views/**/*.pug')
+        .pipe(pug({
+            pretty: true
+        }))
+        .pipe(gulp.dest('src'))
+});
+
+gulp.task('move-index-html-to-dist', function(){
+    return gulp.src('src/index.html')
+        .pip
+        .gulp.dest('dist');
+});
+
 gulp.task('compile-scss-to-css', function(){
     return gulp.src('src/stylesheets/scss/**/*.scss')
         .pipe(sass())
@@ -43,6 +51,7 @@ gulp.task('compile-scss-to-css', function(){
             stream: true
         }));
 });
+
 
 gulp.task('useref', function(){
     return gulp.src('src/*.html')
@@ -76,7 +85,11 @@ gulp.task('clean:dist', function() {
 
 gulp.task('develop', function(callback) {
     runSequence(
-        ['compile-scss-to-css', 'compile-pug-to-html', 'browserSync'],
+        [
+            'compile-scss-to-css',
+            'compile-pug-to-html',
+            'browserSync'
+        ],
         'watch',
         callback
     )
@@ -85,6 +98,7 @@ gulp.task('develop', function(callback) {
 gulp.task('build', function(callback) {
     runSequence(
         'clean:dist',
+        'compile-pug-to-html',
         'compile-scss-to-css',
         ['useref', 'images', 'fonts'],
         callback
