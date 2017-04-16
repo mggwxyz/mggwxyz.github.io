@@ -1,8 +1,8 @@
 require('chromedriver');
 var assert = require("assert");
-var webdriver = require('selenium-webdriver'),
-    By = webdriver.By,
-    until = webdriver.until;
+// var webdriver = require('selenium-webdriver'),
+//     By = webdriver.By,
+//     until = webdriver.until;
 
 describe('mggwxyz.github.io', function(){
 
