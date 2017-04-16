@@ -1,2 +1,4 @@
 # mggwxyz.github.io
-Personal website
+
+A customized GitHub page to display data about my git repositories using GitHub pages
+

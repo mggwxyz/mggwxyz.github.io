@@ -1,7 +1,7 @@
 {
-    "name": "mggwxyz-github-io",
+    "name": "mggwxyz.github.io",
     "version": "1.0.0",
-    "description": "Personal website",
+    "description": "A custom GitHub Page to show off my repositories and contributions",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
         "url": "git+https://github.com/mggwxyz/mggwxyz.github.io.git"
     },
     "author": "Michael Gilbertson",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/mggwxyz/mggwxyz.github.io/issues"
     },
