@@ -7,7 +7,8 @@
     "start": "npm run demo-server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev-server": "gulp develop",
-    "demo-server": "npm i && gulp build && cd dist && http-server -o -p 3000"
+    "demo-server": "npm i && gulp build && cd dist && http-server -o -p 3000",
+    "deploy": "npm i && gulp build && gh-pages -d dist -o origin -b master"
   },
   "repository": {
     "type": "git",
