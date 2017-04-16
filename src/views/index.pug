@@ -30,9 +30,15 @@ html(lang='en-us')
             #main-container
 
                 img#profile-pic(src='images/profile-pic.jpg')
-                h1 Michael Gilbertson | mggwxyz
-                a#github-icon-link(href='https://github.com/mggwxyz')
-                    include ../images/github-icon.svg
+                h1 Michael Gilbertson
+                h2 mggwxyz
+
+                #icon-link-container
+
+                    a.icon-link(href='https://www.github.com/mggwxyz')
+                        include ../images/github-icon.svg
+                    a.icon-link(href='https://www.linkedin.com/in/mggwxyz/')
+                        include ../images/linkedin-icon.svg
 
         // build:js js/main.min.js
         script(src='js/main.js')
