@@ -1,19 +1,38 @@
 {
-    "name": "mggwxyz.github.io",
-    "version": "1.0.0",
-    "description": "A custom GitHub Page to show off my repositories and contributions",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/mggwxyz/mggwxyz.github.io.git"
-    },
-    "author": "Michael Gilbertson",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/mggwxyz/mggwxyz.github.io/issues"
-    },
-    "homepage": "https://github.com/mggwxyz/mggwxyz.github.io#readme"
+  "name": "mggwxyz.github.io",
+  "version": "1.0.0",
+  "description": "A custom GitHub Page to show off my repositories and contributions",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run demo-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-server": "gulp develop",
+    "demo-server": "npm i && gulp build && cd dist && http-server -o -p 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mggwxyz/mggwxyz.github.io.git"
+  },
+  "author": "Michael Gilbertson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mggwxyz/mggwxyz.github.io/issues"
+  },
+  "homepage": "https://github.com/mggwxyz/mggwxyz.github.io#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "gh-pages": "^0.12.0",
+    "browser-sync": "^2.17.3",
+    "del": "^2.0.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.1.2",
+    "gulp-useref": "^3.1.2",
+    "run-sequence": "^1.2.2"
+  }
 }
