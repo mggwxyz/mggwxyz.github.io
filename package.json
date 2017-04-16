@@ -1,0 +1,43 @@
+{
+  "name": "mggwxyz.github.io",
+  "version": "1.0.0",
+  "description": "My custom GitHub User page to show off my repositories and contributions",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run demo-server",
+    "test": "mocha",
+    "dev-server": "npm i  && gulp develop",
+    "demo-server": "npm i && gulp build && cd dist && http-server -o -p 3000",
+    "deploy": "npm i && gulp build && cp README.md .travis.yml gulpfile.js package.json dist && gh-pages -d dist -o origin -b master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mggwxyz/mggwxyz.github.io.git"
+  },
+  "author": "Michael Gilbertson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mggwxyz/mggwxyz.github.io/issues"
+  },
+  "homepage": "https://github.com/mggwxyz/mggwxyz.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.17.3",
+    "chromedriver": "^2.29.0",
+    "del": "^2.0.2",
+    "gh-pages": "^0.12.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.1.2",
+    "gulp-useref": "^3.1.2",
+    "http-server": "^0.9.0",
+    "mocha": "^3.2.0",
+    "run-sequence": "^1.2.2",
+    "selenium-webdriver": "^3.3.0"
+  }
+}
