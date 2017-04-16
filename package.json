@@ -1,14 +1,14 @@
 {
   "name": "mggwxyz.github.io",
   "version": "1.0.0",
-  "description": "A custom GitHub Page to show off my repositories and contributions",
+  "description": "My custom GitHub User page to show off my repositories and contributions",
   "main": "index.js",
   "scripts": {
     "start": "npm run demo-server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev-server": "gulp develop",
     "demo-server": "npm i && gulp build && cd dist && http-server -o -p 3000",
-    "deploy": "npm i && gulp build && gh-pages -d dist -o origin -b master"
+    "deploy": "npm i && gulp build && cp README.md dist && gh-pages -d dist -o origin -b master"
   },
   "repository": {
     "type": "git",
