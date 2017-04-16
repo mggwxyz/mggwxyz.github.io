@@ -369,15 +369,58 @@ template {
 [hidden] {
   display: none; }
 
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 400;
+  font-style: normal;
+  src: url("../../fonts/Nunito-regular/Nunito-regular.eot");
+  src: url("../../fonts/Nunito-regular/Nunito-regular.eot?#iefix") format("embedded-opentype"), local("Nunito Regular"), local("Nunito-regular"), url("../../fonts/Nunito-regular/Nunito-regular.woff2") format("woff2"), url("../../fonts/Nunito-regular/Nunito-regular.woff") format("woff"), url("../../fonts/Nunito-regular/Nunito-regular.ttf") format("truetype"), url("../../fonts/Nunito-regular/Nunito-regular.svg#Nunito") format("svg"); }
+
 html, body {
+  background-color: #3a3e64;
+  color: #e2e2e2;
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   min-height: 100vh;
+  font-family: 'Nunito'; }
+
+#root-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#main-container {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-content: center; }
+
+#profile-pic {
+  margin: 0 auto;
+  border: 0.5rem solid #e2e2e2;
+  border-radius: 50%;
+  width: 150px; }
+
+svg {
   width: 100%;
   height: 100%; }
 
-* {
-  box-sizing: border-box; }
+#github-icon-link {
+  width: 32px;
+  height: 32px; }
+  #github-icon-link svg path {
+    transition: fill 400ms;
+    fill: #e2e2e2; }
+  #github-icon-link:hover svg path {
+    fill: #b3b3b3; }
 
-.is-circle {
-  border-radius: 50%; }
+@media screen and (min-width: 768px) {
+  #main-container {
+    width: 400px;
+    height: 400px; }
+  #profile-pic {
+    width: 250px; } }
