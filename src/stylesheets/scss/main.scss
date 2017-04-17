@@ -79,7 +79,7 @@ a.icon-link {
   width: 32px;
   height: 32px;
 
-  svg path {
+  svg path, svg text {
 
     transition: fill 400ms;
     fill: $light-gray;
