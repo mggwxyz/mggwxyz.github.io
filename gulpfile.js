@@ -11,8 +11,7 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var uglify = require('gulp-uglify');
 var pug = require('gulp-pug');
-
-
+var babel = require('gulp-babel');
 
 gulp.task('watch', ['browserSync', 'compile-scss-to-css'],function(){
     gulp.watch('src/stylesheets/scss/*', ['compile-scss-to-css']);
@@ -24,9 +23,15 @@ gulp.task('watch', ['browserSync', 'compile-scss-to-css'],function(){
 gulp.task('browserSync', function(){
     browserSync.init({
         server: {
-            baseDir: 'src'
+            baseDir: 'dist'
         }
     })
+});
+
+gulp.task('transpile-js', function(){
+    return gulp.src("src/js/*.js")
+    .pipe(babel())
+    .pipe(gulp.dest("dist/js"));
 });
 
 gulp.task('compile-pug-to-html', function buildHTML() {
@@ -39,7 +44,7 @@ gulp.task('compile-pug-to-html', function buildHTML() {
 
 gulp.task('move-index-html-to-dist', function(){
     return gulp.src('src/index.html')
-        .pip
+        .pipe()
         .gulp.dest('dist');
 });
 
@@ -57,7 +62,7 @@ gulp.task('useref', function(){
     return gulp.src('src/*.html')
         .pipe(useref())
         .pipe(gulpIf('*.css', cssnano()))
-        .pipe(gulpIf('*.js', uglify()))
+        // .pipe(gulpIf('*.js', uglify()))
         .pipe(gulp.dest('dist'));
 });
 
@@ -86,10 +91,12 @@ gulp.task('clean:dist', function() {
 gulp.task('develop', function(callback) {
     runSequence(
         [
-            'compile-scss-to-css',
+            'clean:dist',
             'compile-pug-to-html',
-            'browserSync'
+            'transpile-js',
+            'compile-scss-to-css',
         ],
+        ['useref', 'images', 'fonts'],
         'watch',
         callback
     )
@@ -99,6 +106,7 @@ gulp.task('build', function(callback) {
     runSequence(
         'clean:dist',
         'compile-pug-to-html',
+        'transpile-js',
         'compile-scss-to-css',
         ['useref', 'images', 'fonts'],
         callback
